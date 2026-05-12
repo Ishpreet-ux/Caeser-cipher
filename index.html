@@ -3,75 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher - Encrypt & Decrypt</title>
-    <link rel="stylesheet" href="public/styles.css">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="container">
-        <div class="header">
-            <h1>Caesar Cipher</h1>
-            <p class="subtitle">Encrypt and decrypt messages using the classic Caesar cipher algorithm</p>
+
+    <div class="container">
+        <h1>Caesar Cipher</h1>
+
+        <textarea id="text" placeholder="Enter your message"></textarea>
+
+        <input type="number" id="shift" placeholder="Shift Value">
+
+        <div class="buttons">
+            <button onclick="encryptText()">Encrypt</button>
+            <button onclick="decryptText()">Decrypt</button>
         </div>
 
-        <div class="card">
-            <div class="mode-toggle">
-                <button class="mode-btn active" data-mode="encrypt">Encrypt</button>
-                <button class="mode-btn" data-mode="decrypt">Decrypt</button>
-            </div>
-
-            <div class="form-group">
-                <label for="input-text">Input Text</label>
-                <textarea 
-                    id="input-text" 
-                    placeholder="Enter your message here..."
-                    rows="6"
-                ></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="shift">
-                    Shift Value: <span id="shift-value">13</span>
-                </label>
-                <input 
-                    type="range" 
-                    id="shift" 
-                    min="1" 
-                    max="25" 
-                    value="13"
-                    class="slider"
-                >
-                <div class="shift-markers">
-                    <span>1</span>
-                    <span>25</span>
-                </div>
-            </div>
-
-            <button id="process-btn" class="process-btn">
-                <span id="btn-text">Encrypt Message</span>
-            </button>
-
-            <div class="form-group">
-                <label for="output-text">Output Text</label>
-                <div class="output-wrapper">
-                    <textarea 
-                        id="output-text" 
-                        placeholder="Result will appear here..."
-                        rows="6"
-                        readonly
-                    ></textarea>
-                    <button id="copy-btn" class="copy-btn" title="Copy to clipboard">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="error-message" class="error-message"></div>
-        </div>
-    </main>
+        <h2>Result</h2>
+        <div id="result"></div>
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
